@@ -6,16 +6,14 @@ set -o nounset
 #set -o xtrace
 
 # input and output directories for the python scripts
-#calib_dir=/data/calib/
-calib_dir=..
+calib_dir=/data/calib/
 plots_outdir=./plots_outdir/
 
 # input and output directories for runs and run statistics 
 mkdir -p ./stats_output_files
 time=$(date '+%F_%H-%M-%S')
 stats_output_file='./stats_output_files/stats_output_file_'${time}'.csv'
-#input_file="pos_and_neg_sf.csv"
-input_file="new.csv"
+input_file="pos_and_neg_sf.csv"
 
 
 
