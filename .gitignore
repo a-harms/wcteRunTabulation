@@ -3,5 +3,5 @@
 /statistics_calculation/.venv/
 
 # output files to ignore
-/statistics_calculation/stats_ouptut_files/
+/statistics_calculation/stats_output_files/
 /statistics_calculation/plots_outdir/
