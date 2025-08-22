@@ -288,6 +288,8 @@ def vme_analysis(run_str, upper_pion_cut, lower_muon_cut, upper_muon_cut, calib_
         {"cut_set":"e-veto","name":"act1_vs_t0t1_e-veto","type":"2d","x":"tof_np","y":"act1_np","xbins":150,"xrange":(12,18),"ybins":150,"yrange":(0,18000)},
         {"cut_set":"pion-only","name":"act1_vs_t0t1_pion","type":"2d","x":"tof_np","y":"act1_np","xbins":150,"xrange":(12,18),"ybins":150,"yrange":(0,18000)},
         {"cut_set":"muon-only","name":"act1_vs_t0t1_muon","type":"2d","x":"tof_np","y":"act1_np","xbins":150,"xrange":(12,18),"ybins":150,"yrange":(0,18000)},
+
+        {"cut_set":"raw","name":"tof_vs_spill_raw","type":"2d","x":"spill_np","y":"tof_np","xbins":max_spill,"xrange":(0,max_spill),"ybins":100,"yrange":(12,18)},
     ]
 
     # Output
