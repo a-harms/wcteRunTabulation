@@ -38,7 +38,6 @@ sed -n "${start_line},${end_line}p" $input_file | grep -v '^#' | while IFS= read
 	echo "Running python wcte_vme_plots_new_arguments_2.py for vme run number:" $vme_run_num
 
 	plots_new_output=$(python wcte_vme_plots_new_arguments.py $vme_run_num $upper_pion_cut $lower_muon_cut $upper_muon_cut $calib_dir $plots_outdir)
-	echo "${plots_new_output}"
 
 	num_spills=$( grep 'Total number of spills' <<< $plots_new_output| sed 's/\[INFO\] Total number of spills: //')
 	num_events=$( grep 'Total events' <<< $plots_new_output| sed 's/\[INFO\] Total events: //')
@@ -46,8 +45,6 @@ sed -n "${start_line},${end_line}p" $input_file | grep -v '^#' | while IFS= read
 	# run wcte_vme_momentum_new_arguments.py
 	echo "Running python wcte_vme_momentum_new_arguments.py for vme run number:" $vme_run_num
 	momentum_new_output=$(python wcte_vme_momentum_new_arguments.py $vme_run_num $plots_outdir)
-
-	echo "${momentum_new_output}"
 
 	# extracting the muon and pion statistics
 	muon_entries=$(awk '/Muon entries/ {print $7}' <<< $momentum_new_output)
