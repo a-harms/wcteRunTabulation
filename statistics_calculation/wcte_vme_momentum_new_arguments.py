@@ -26,7 +26,7 @@ def vme_momentum_calculator(run_number, base_input_dir, base_output_dir):
 
     input_file = os.path.join(input_folder, f"hist_run{run_number}.root")
     output_fig = os.path.join(output_folder,  f"tof_fits_run{run_number}.png")
-
+    
     # Open ROOT file and retrieve histograms
     f = ROOT.TFile.Open(input_file)
     if not f or f.IsZombie():
@@ -167,6 +167,10 @@ def vme_momentum_calculator(run_number, base_input_dir, base_output_dir):
     fig.savefig(output_fig,facecolor='w')
 
 
+    # save Raw with fits plot seperately from other plots
+    seperate_output_fig = os.path.join(output_folder,  f"tof_fits_raw_run{run_number}.png")
+    extent = axes[1,1].get_window_extent().transformed(fig.dpi_scale_trans.inverted())
+    fig.savefig(seperate_output_fig, bbox_inches=extent.expanded(1.25, 1.15))
 
 
 
